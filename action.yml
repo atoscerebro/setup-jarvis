@@ -1,0 +1,13 @@
+name: Setup jarvis CLI
+description: Download the correct version of jarvis and add it to the PATH
+inputs:
+  version:
+    description: version of jarvis to use in form v1.2 or v1.2.3 or `latest`
+    required: false
+    default: 'latest'
+runs:
+  using: node16
+  main: src/index.ts
+branding:
+  icon: book
+  color: blue
