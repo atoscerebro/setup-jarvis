@@ -1,10 +1,14 @@
 name: Setup jarvis CLI
-description: Download the correct version of jarvis and add it to the PATH
+description: Download the correct version of jarvis and add it to the PATH.
 inputs:
+  token:
+    description: Used to pull from jarvis repo. Typically use default value.
+    default: ${{ github.token }}
   version:
-    description: version of jarvis to use in form v1.2 or v1.2.3 or `latest`
-    required: false
+    description: version of jarvis to use in form v1.2 or v1.2.3 or `latest`.
     default: 'latest'
+  architecture:
+    description: 'Target architecture for Go to use. Examples: amd64, arm64. Will use system architecture by default.'
 runs:
   using: node16
   main: src/index.ts
