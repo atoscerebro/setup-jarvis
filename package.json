@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "description": "setup jarvis action",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc && ncc build src/index.ts -o dist",
+    "format": "prettier --write **/*.ts",
+    "format:check": "prettier --check **/*.ts"
+  },
   "dependencies": {
     "@actions/core": "^1.9.1",
     "@actions/tool-cache": "^2.0.1",
@@ -12,6 +17,9 @@
   },
   "devDependencies": {
     "@types/node": "^18.7.23",
-    "@types/semver": "^7.3.12"
+    "@types/semver": "^7.3.12",
+    "@vercel/ncc": "^0.33.4",
+    "prettier": "^2.7.1",
+    "typescript": "^3.9.10"
   }
 }

@@ -16,3 +16,9 @@ steps:
       version: '1' # The jarvis version to download and use.
   - run: jarvis project docs --check # Check if docs are up to date.
 ```
+
+## Development
+
+- run `yarn` to pull dependencies
+- to comply with style, run `yarn run format`
+- to transpile /src, run `yarn run build` to output to dist/

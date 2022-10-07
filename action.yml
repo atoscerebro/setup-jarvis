@@ -11,7 +11,7 @@ inputs:
     description: 'Target architecture for Go to use. Examples: amd64, arm64. Will use system architecture by default.'
 runs:
   using: node16
-  main: src/index.ts
+  main: dist/index.js
 branding:
   icon: book
   color: blue

@@ -7,11 +7,11 @@ export function archName(arch: string): string {
   core.info('resolving architecture');
 
   const mapping: Record<string, string> = {
-    'x32': '386',
-    'x64': 'amd64',
+    x32: '386',
+    x64: 'amd64',
   };
   const resolved = mapping[arch] || arch;
-  core.info(`resolved as ${ resolved }`);
+  core.info(`resolved as ${resolved}`);
 
   return resolved;
 }
@@ -20,10 +20,10 @@ export function platformName(plat: string): string {
   core.info('resolving platform');
 
   const mapping: Record<string, string> = {
-    'win32': 'windows',
+    win32: 'windows',
   };
   const resolved = mapping[plat] || plat;
-  core.info(`resolved as ${ resolved }`);
+  core.info(`resolved as ${resolved}`);
 
   return resolved;
 }
@@ -41,8 +41,8 @@ export async function latestVersion(auth: string | undefined): Promise<string> {
 
   const http = new httpm.HttpClient('setup-jarvis');
   if (auth) {
-    core.debug('set auth')
-    headers.authorization = auth
+    core.debug('set auth');
+    headers.authorization = auth;
   }
 
   const response = await http.getJson<ITag[]>(tagsUrl, headers);
@@ -55,7 +55,7 @@ export async function latestVersion(auth: string | undefined): Promise<string> {
   const resolved = semver.clean(tags[0].name);
 
   if (resolved) {
-    core.info(`resolved as ${ resolved }`);
+    core.info(`resolved as ${resolved}`);
     return resolved;
   } else {
     return '';
